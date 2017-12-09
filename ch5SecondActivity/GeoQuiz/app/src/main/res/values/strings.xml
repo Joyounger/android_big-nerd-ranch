@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">GeoQuiz</string>
+    <string name="true_button">True</string>
+    <string name="false_button">False</string>
+    <string name="next_button">Next</string>
+    <string name="correct_toast">Correct!</string>
+    <string name="incorrect_toast">Incorrect!</string>
+    <string name="question_oceans">the pacific ocean is larger than the atlantic ocean.</string>
+    <string name="question_mideast">the suez canal connects the red sea and the india ocean.</string>
+    <string name="question_africa">the source of the nile river is in egypt.</string>
+    <string name="question_americas">the amazon river id the largest river in the americas.</string>
+    <string name="question_asia">lake baikal is the world\'s oldest and deepest freshwater lake.</string>
+    <string name="prev_button">Prev</string>
+    <string name="cheat_button">Cheat!</string>
+    <string name="warning_text">are you sure you want to do this?</string>
+    <string name="show_answer_button">Show Answer</string>
+    <string name="judgment_toast">Cheating is wrong.</string>
+</resources>
