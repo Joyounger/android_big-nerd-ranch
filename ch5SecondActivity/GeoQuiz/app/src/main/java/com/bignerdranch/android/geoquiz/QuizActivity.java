@@ -31,6 +31,8 @@ public class QuizActivity extends AppCompatActivity {
     };
     private int mCurrentIndex = 0;
 
+    private boolean[] cheatMark = new boolean[mQuestionBank.length]; // 用于解决挑战练习-3
+
     private void updateQuestion() {
         int question = mQuestionBank[mCurrentIndex].getQuestion();
         mQuestionTextView.setText(question);
@@ -39,6 +41,7 @@ public class QuizActivity extends AppCompatActivity {
     private void checkAnswer(boolean userPressedTrue) {
         if (mIsCheater) {
             Toast.makeText(QuizActivity.this, "Cheating is wrong", Toast.LENGTH_SHORT).show();
+            cheatMark[mCurrentIndex] = true;
         } else {
             if (userPressedTrue == mQuestionBank[mCurrentIndex].isTrueQuestion()) {
                 Toast.makeText(QuizActivity.this, "corrected!", Toast.LENGTH_SHORT).show();
@@ -84,7 +87,11 @@ public class QuizActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
                     updateQuestion();
-                    mIsCheater = false;
+                    if (cheatMark[mCurrentIndex] == true) {
+                        mIsCheater = true;
+                    } else {
+                        mIsCheater = false;
+                    }
                 }
             }
         );
@@ -94,7 +101,11 @@ public class QuizActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
                     updateQuestion();
-                    mIsCheater = false;
+                    if (cheatMark[mCurrentIndex] == true) {
+                        mIsCheater = true;
+                    } else {
+                        mIsCheater = false;
+                    }
                 }
             }
         );
@@ -108,7 +119,11 @@ public class QuizActivity extends AppCompatActivity {
                        mCurrentIndex = mQuestionBank.length - 1;
                    }
                    updateQuestion();
-                   mIsCheater = false;
+                   if (cheatMark[mCurrentIndex] == true) {
+                       mIsCheater = true;
+                   } else {
+                       mIsCheater = false;
+                   }
                }
            }
         );
